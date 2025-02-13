@@ -39,17 +39,17 @@ const App = () => {
                 direction *= -1;
             }
 
-            // Draw the circle
+            // Draw circle
             context.beginPath();
             context.arc(210, yPosition, radius, 0, Math.PI * 2);
-            context.fillStyle = gradient;
+            context.fillStyle = gradient; //fill with the gradient
             context.strokeStyle = "red";
             context.lineWidth = 4;
             context.globalAlpha = 0.8; // Set opacity
             context.fill();
             context.stroke();
 
-            // Draw a polygon (SVG polygon)
+            // Draw triangle
             context.beginPath();
             context.moveTo(350, 150 - yPosition);
             context.lineTo(300, 250 - yPosition);
@@ -61,7 +61,7 @@ const App = () => {
             context.fill();
             context.stroke();
 
-            // Draw another polygon (SVG polygon with more points)
+            // Draw star
             context.beginPath();
             context.moveTo(500, -50 + yPosition);
             context.lineTo(470, 50 + yPosition);
@@ -75,7 +75,7 @@ const App = () => {
             context.fill();
             context.stroke();
 
-            // Draw a rectangle (SVG rect)
+            // Draw a rectangle
             context.beginPath();
             context.moveTo(25, 150 - yPosition);
             context.lineTo(125, 150 - yPosition);
@@ -109,10 +109,12 @@ const App = () => {
         setDoAnimate(!doAnimate);
     }
 
+    //increases radius of the circle
     const circR = () => {
         setRadius(radius*1.25);
     }
 
+    //returned html to display on the page
     return (
         <div>
             <h1>My First SVG on Canvas</h1>
